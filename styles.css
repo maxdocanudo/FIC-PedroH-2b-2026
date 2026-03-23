@@ -6,7 +6,6 @@ body{
             }
 
             /* NAVBAR */
-            
             nav{
                 background: #06283d;
                 padding:15px;
@@ -48,7 +47,33 @@ body{
                 font-size:18px;
             }
 
-            /* Seção geral */
+            /* BOTÃO INTERATIVO */
+
+            .botao-marinho{
+                margin-top:20px;
+                padding:15px 30px;
+                font-size:18px;
+                border:none;
+                border-radius:30px;
+                background:linear-gradient(45deg,#00e5ff,#0077b6);
+                color:white;
+                cursor:pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 0 10px rgba(0,229,255,0.5);
+            }
+
+            /* Hover (quando passa o mouse) */
+            .botao-marinho:hover{
+                transform:scale(1.1);
+                box-shadow: 0 0 20px rgba(0,229,255,0.9);
+            }
+
+            /* Clique */
+            .botao-marinho:active{
+                transform:cale(0.95);
+            }
+
+            /* Seções */
             section{
                 padding:40px;
                 max-width:900px;
@@ -81,6 +106,7 @@ body{
             }
 
             /* Rodapé */
+            
             footer{
                 text-align:center;
                 padding:20px;
