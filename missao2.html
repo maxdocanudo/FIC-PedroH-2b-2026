@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Missão 2 — Processo de String</title>
+  <link rel="stylesheet" href="missoes.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="page-header">
+      <div class="header-badge">02</div>
+      <div>
+        <div class="header-title">Processo de String</div>
+        <div class="header-sub">Quebra e análise de texto usando .split()</div>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="card-title">Entrada de texto</div>
+
+      <div class="field">
+        <label for="texto">Texto para processar</label>
+        <textarea id="texto" rows="4"
+          placeholder="Cole ou digite qualquer texto aqui...&#10;Ex.: João,Maria,Pedro,Ana">Ana Clara,Pedro,Maria José,Carlos</textarea>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="separador">Separador</label>
+          <input id="separador" type="text" value="," placeholder="vírgula, espaço, ponto..." />
+        </div>
+        <div class="field">
+          <label for="transform">Transformação</label>
+          <select id="transform">
+            <option value="none">Nenhuma</option>
+            <option value="upper">MAIÚSCULAS</option>
+            <option value="lower">minúsculas</option>
+            <option value="title">Primeira Letra Maiúscula</option>
+            <option value="reverse">Invertida</option>
+            <option value="trim">Remover espaços extras</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="processar()">▶ Processar</button>
+        <button class="btn btn-outline btn-sm" onclick="limpar()">✕ Limpar</button>
+      </div>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="card" id="resultado" style="display:none;">
+      <div class="card-title">Resultado do .split()</div>
+
+      <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px;">
+        <div>
+          <div class="output-label">Partes encontradas</div>
+          <div class="text-lime text-mono" id="qtd" style="font-size:22px;font-weight:700;">0</div>
+        </div>
+        <div>
+          <div class="output-label">Char. total do texto</div>
+          <div class="text-lime text-mono" id="chars" style="font-size:22px;font-weight:700;">0</div>
+        </div>
+        <div>
+          <div class="output-label">Maior parte</div>
+          <div class="text-mono" id="maior" style="font-size:14px;margin-top:4px;">—</div>
+        </div>
+      </div>
+
+      <div class="output-label">Partes geradas</div>
+      <div id="partes" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;"></div>
+
+      <div class="divider"></div>
+
+      <div class="output-label">Texto reconstruído (join com " | ")</div>
+      <div class="output-box" id="reconstruido">—</div>
+
+      <div class="output-label mt-16">Estatísticas por parte</div>
+      <table style="margin-top:10px;">
+        <thead>
+          <tr><th>#</th><th>Parte</th><th>Letras</th><th>Palavras</th></tr>
+        </thead>
+        <tbody id="stats-corpo"></tbody>
+      </table>
+    </div>
+
+  </div>
+  <script src="missao2.js"></script>
+</body>
+</html>

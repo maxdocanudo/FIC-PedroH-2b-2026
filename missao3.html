@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Missão 3 — Dashboard de Pessoas</title>
+  <link rel="stylesheet" href="missoes.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="page-header">
+      <div class="header-badge">03</div>
+      <div>
+        <div class="header-title">Dashboard de Pessoas</div>
+        <div class="header-sub">Listagem com nomes, idades, médias e filtro de maiores de 18</div>
+      </div>
+    </header>
+
+    <!-- ADD -->
+    <div class="card">
+      <div class="card-title">Cadastrar pessoa</div>
+      <div class="row">
+        <div class="field">
+          <label for="p-nome">Nome</label>
+          <input id="p-nome" type="text" placeholder="Ex.: Lucas Alves" />
+        </div>
+        <div class="field">
+          <label for="p-idade">Idade</label>
+          <input id="p-idade" type="number" min="0" max="120" placeholder="Ex.: 17" />
+        </div>
+        <div class="field">
+          <label for="p-nota">Nota (0–10)</label>
+          <input id="p-nota" type="number" min="0" max="10" step="0.1" placeholder="Ex.: 8.5" />
+        </div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="adicionar()">＋ Adicionar</button>
+        <button class="btn btn-outline btn-sm" onclick="carregarDemo()">📋 Carregar demo</button>
+        <button class="btn btn-danger btn-sm" onclick="limparTudo()">✕ Limpar</button>
+      </div>
+      <div id="msg-erro" class="text-danger mt-8" style="font-size:13px;display:none;"></div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="card" id="painel-filtros" style="display:none;">
+      <div class="card-title">Filtros e resumo</div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+        <button class="btn btn-outline btn-sm" id="btn-todos" onclick="setFiltro('todos')">Todos</button>
+        <button class="btn btn-outline btn-sm" id="btn-maiores" onclick="setFiltro('maiores')">Maiores de 18</button>
+        <button class="btn btn-outline btn-sm" id="btn-menores" onclick="setFiltro('menores')">Menores de 18</button>
+      </div>
+
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <div><div class="output-label">Exibindo</div><div class="text-lime text-mono" id="exibindo" style="font-size:20px;font-weight:700;">0</div></div>
+        <div><div class="output-label">Média de idades</div><div class="text-lime text-mono" id="media-idade" style="font-size:20px;font-weight:700;">—</div></div>
+        <div><div class="output-label">Média de notas</div><div class="text-lime text-mono" id="media-nota" style="font-size:20px;font-weight:700;">—</div></div>
+      </div>
+    </div>
+
+    <!-- TABELA -->
+    <div class="card" id="painel-tabela" style="display:none;">
+      <div class="card-title">Lista</div>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Nome</th><th>Idade</th><th>Nota</th><th>Situação</th></tr>
+        </thead>
+        <tbody id="tabela"></tbody>
+      </table>
+    </div>
+
+  </div>
+  <script src="missao3.js"></script>
+</body>
+</html>

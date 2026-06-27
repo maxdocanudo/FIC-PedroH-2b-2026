@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Missão 1 — Coleta & Média</title>
+  <link rel="stylesheet" href="missoes.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="page-header">
+      <div class="header-badge">01</div>
+      <div>
+        <div class="header-title">Coleta de Informações</div>
+        <div class="header-sub">Cadastro de pessoas com cálculo automático de média</div>
+      </div>
+    </header>
+
+    <!-- FORMULÁRIO -->
+    <div class="card">
+      <div class="card-title">Adicionar pessoa</div>
+
+      <div class="row">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input id="nome" type="text" placeholder="Ex.: Ana Souza" />
+        </div>
+        <div class="field">
+          <label for="idade">Idade</label>
+          <input id="idade" type="number" min="0" max="120" placeholder="Ex.: 25" />
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="adicionarPessoa()">＋ Adicionar</button>
+        <button class="btn btn-danger btn-sm" onclick="limparLista()">✕ Limpar lista</button>
+      </div>
+
+      <div id="erro" class="text-danger mt-8" style="font-size:13px;display:none;"></div>
+    </div>
+
+    <!-- RESULTADOS -->
+    <div class="card" id="card-resultado" style="display:none;">
+      <div class="card-title">Resultado</div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Idade</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-corpo"></tbody>
+      </table>
+
+      <div class="divider"></div>
+
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <div>
+          <div class="output-label">Total de pessoas</div>
+          <div class="text-mono text-lime" id="total" style="font-size:24px;font-weight:700;">—</div>
+        </div>
+        <div>
+          <div class="output-label">Média de idades</div>
+          <div class="text-mono text-lime" id="media" style="font-size:24px;font-weight:700;">—</div>
+        </div>
+        <div>
+          <div class="output-label">Mais novo</div>
+          <div class="text-mono" id="menor" style="font-size:14px;margin-top:4px;">—</div>
+        </div>
+        <div>
+          <div class="output-label">Mais velho</div>
+          <div class="text-mono" id="maior" style="font-size:14px;margin-top:4px;">—</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="missao1.js"></script>
+</body>
+</html>

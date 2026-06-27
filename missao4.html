@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Missão 4 — Tipos de Dados</title>
+  <link rel="stylesheet" href="missoes.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="page-header">
+      <div class="header-badge">04</div>
+      <div>
+        <div class="header-title">Tipos de Dados</div>
+        <div class="header-sub">Testes com String, Number, Boolean, Array, Object e mais</div>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="card-title">Insira um valor</div>
+
+      <div class="field">
+        <label for="valor">Valor para testar</label>
+        <input id="valor" type="text" placeholder='Ex.: 42  |  "texto"  |  true  |  [1,2,3]  |  null' />
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="testar()">🔍 Analisar</button>
+        <button class="btn btn-outline btn-sm" onclick="testarTodos()">▶ Demo automático</button>
+      </div>
+    </div>
+
+    <!-- PAINEL DE RESULTADO -->
+    <div class="card" id="painel" style="display:none;">
+      <div class="card-title">Diagnóstico</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;" id="grid-info"></div>
+
+      <div class="divider"></div>
+
+      <div class="output-label">Valor bruto recebido (string)</div>
+      <div class="output-box" id="bruto">—</div>
+
+      <div class="output-label mt-16">Conversões possíveis</div>
+      <table style="margin-top:10px;">
+        <thead><tr><th>Conversão</th><th>Resultado</th><th>typeof</th></tr></thead>
+        <tbody id="conv-corpo"></tbody>
+      </table>
+    </div>
+
+    <!-- LOG DEMO -->
+    <div class="card" id="painel-demo" style="display:none;">
+      <div class="card-title">Log — Demo automático</div>
+      <div id="demo-log" class="output-box" style="white-space:pre-line;line-height:2;"></div>
+    </div>
+
+  </div>
+  <script src="missao4.js"></script>
+</body>
+</html>
